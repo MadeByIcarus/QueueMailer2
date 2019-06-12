@@ -1,0 +1,46 @@
+{
+  "name": "icarus/queue-mailer2",
+  "type": "library",
+  "license": "BSD-3-Clause",
+  "description": "A mailing system providing Latte templates for composing e-mails. It uses a database queue to store and send e-mails.",
+  "keywords": [
+    "nette",
+    "latte",
+    "mail",
+    "mail templates",
+    "doctrine2"
+  ],
+  "authors": [
+    {
+      "name": "Pavel Gajdoš",
+      "email": "info@pavelgajdos.cz"
+    },
+    {
+      "name": "Icarus s.r.o",
+      "homepage": "http://icarus.cz"
+    }
+  ],
+  "require": {
+    "php": ">=7.3",
+    "nette/application": "^3.0",
+    "nette/mail": "^3.0",
+    "tracy/tracy": "^2.6",
+    "nette/di": "^3.0",
+    "nettrine/orm": "^0.5"
+  },
+  "require-dev": {
+    "nette/tester": "^2.2"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "autoload": {
+    "psr-4": {
+      "Icarus\\QueueMailer2\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "IcarusTests\\": "tests/"
+    }
+  }
+}
