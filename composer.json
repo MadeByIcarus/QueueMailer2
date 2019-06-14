@@ -2,7 +2,7 @@
   "name": "icarus/queue-mailer2",
   "type": "library",
   "license": "BSD-3-Clause",
-  "description": "A mailing system providing Latte templates for composing e-mails. It uses a database queue to store and send e-mails.",
+  "description": "A mailing system using Latte templates for composing e-mails. It uses a database queue to store and send e-mails.",
   "keywords": [
     "nette",
     "latte",
@@ -26,7 +26,8 @@
     "nette/mail": "^3.0",
     "tracy/tracy": "^2.6",
     "nette/di": "^3.0",
-    "nettrine/orm": "^0.5"
+    "nettrine/orm": "^0.5",
+    "icarus/doctrine-helpers": "dev-master"
   },
   "require-dev": {
     "nette/tester": "^2.2"

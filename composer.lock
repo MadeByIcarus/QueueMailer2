@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2e562acad0c8b6600d254ef7738f9d7a",
+    "content-hash": "3c391c3663e332a7a41317d62b4cad00",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -877,6 +877,55 @@
                 "reflection"
             ],
             "time": "2018-06-14T14:45:07+00:00"
+        },
+        {
+            "name": "icarus/doctrine-helpers",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MadeByIcarus/DoctrineHelpers.git",
+                "reference": "c570a0f13e17cad2969cf08e17ffca4056316027"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MadeByIcarus/DoctrineHelpers/zipball/c570a0f13e17cad2969cf08e17ffca4056316027",
+                "reference": "c570a0f13e17cad2969cf08e17ffca4056316027",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "require-dev": {
+                "nette/tester": "^2.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Icarus\\DoctrineHelpers\\SmartEnumType\\": "src/SmartEnumType/",
+                    "Icarus\\DoctrineHelpers\\Entities\\Attributes\\": "src/Attributes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Pavel Gajdoš",
+                    "email": "info@pavelgajdos.cz"
+                },
+                {
+                    "name": "Icarus s.r.o",
+                    "homepage": "http://icarus.cz"
+                }
+            ],
+            "description": "Helpers for working with Doctrine 2.",
+            "keywords": [
+                "doctrine",
+                "enum",
+                "smart enum type"
+            ],
+            "time": "2019-05-14T10:37:52+00:00"
         },
         {
             "name": "nette/application",
@@ -2189,7 +2238,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "icarus/doctrine-helpers": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
