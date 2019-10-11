@@ -120,7 +120,7 @@ class Email
 
 
 
-    public function getMessage(): Message
+    public function getMessage(string $basePath = null): Message
     {
         $message = new Message();
 
@@ -136,7 +136,7 @@ class Email
         }
 
         $message->setSubject($this->subject);
-        $message->setHtmlBody($this->body);
+        $message->setHtmlBody($this->body, $basePath);
 
         if ($this->attachments) {
             $attachments = explode(";", $this->attachments);

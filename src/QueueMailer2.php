@@ -39,6 +39,8 @@ class QueueMailer2
      */
     private $defaultLanguage;
 
+    private $basePath;
+
     /**
      * @var ITemplateFactory
      */
@@ -64,6 +66,7 @@ class QueueMailer2
     function __construct(
         $defaultSender,
         $defaultLanguage,
+        $basePath,
         EmailService $emailService,
         EntityManagerDecorator $entityManager,
         IMailer $mailer,
@@ -73,6 +76,7 @@ class QueueMailer2
     {
         $this->sender = $defaultSender;
         $this->defaultLanguage = $defaultLanguage;
+        $this->basePath = $basePath;
 
         $this->emailService = $emailService;
         $this->entityManager = $entityManager;
@@ -125,7 +129,7 @@ class QueueMailer2
             return; // silently prevent sending duplicates
         }
 
-        $message = $email->getMessage();
+        $message = $email->getMessage($this->basePath);
 
         try {
             $this->mailer->send($message);
@@ -151,7 +155,7 @@ class QueueMailer2
             throw new \InvalidArgumentException(Email::class . " with id $id not found.");
         }
 
-        $emlContent = $email->getMessage()->generateMessage();
+        $emlContent = $email->getMessage($this->basePath)->generateMessage();
         $filename = rtrim($outputDir, "/") . "/email_" . $id . "_" . time() . ".eml";
         @file_put_contents($filename, $emlContent);
 

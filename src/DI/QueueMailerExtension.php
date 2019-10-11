@@ -26,7 +26,8 @@ class QueueMailerExtension extends CompilerExtension
 
     private $defaults = [
         'defaultLanguage' => 'en',
-        'defaultSender' => ''
+        'defaultSender' => '',
+        'basePath' => null
     ];
 
 
@@ -36,7 +37,8 @@ class QueueMailerExtension extends CompilerExtension
         return
             Expect::structure([
                 'defaultLanguage' => Expect::string('en'),
-                'defaultSender' => Expect::email()->required()
+                'defaultSender' => Expect::email()->required(),
+                'basePath' => Expect::string()
             ]);
     }
 
@@ -47,7 +49,7 @@ class QueueMailerExtension extends CompilerExtension
         $config = $this->config;
 
         $this->getContainerBuilder()->addDefinition($this->prefix("QueueMailer2"))
-            ->setFactory(QueueMailer2::class, [$config->defaultSender, $config->defaultLanguage]);
+            ->setFactory(QueueMailer2::class, [$config->defaultSender, $config->defaultLanguage, $config->basePath]);
 
         $this->getContainerBuilder()->addDefinition($this->prefix("EmailService"))
             ->setFactory(EmailService::class);
