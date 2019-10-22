@@ -27,10 +27,16 @@
     "tracy/tracy": "^2.6",
     "nette/di": "^3.0",
     "nettrine/orm": "^0.5",
-    "icarus/doctrine-helpers": "dev-master"
+    "icarus/doctrine-helpers": "dev-master",
+    "latte/latte": "^2.5"
   },
   "require-dev": {
     "nette/tester": "^2.2"
+  },
+  "config": {
+    "platform": {
+      "php": "7.3"
+    }
   },
   "minimum-stability": "dev",
   "prefer-stable": true,

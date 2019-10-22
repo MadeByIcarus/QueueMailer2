@@ -172,6 +172,9 @@ class QueueMailer2
     {
         /** @var Template $template */
         $template = $this->templateFactory->createTemplate();
+
+        $template->getLatte()->addProvider('uiControl', $this->linkGenerator);
+
         $template->setFile($messageTemplate->getFile());
         if ($messageTemplate->getParameters()) {
             $template->setParameters($messageTemplate->getParameters());
