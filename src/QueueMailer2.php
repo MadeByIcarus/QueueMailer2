@@ -187,7 +187,7 @@ class QueueMailer2
 
 
 
-    public function createMail(string $to, string $subject, Template $body, $from = null)
+    public function createMail(string $to, string $subject, string $body, $from = null)
     {
         if (!Validators::isEmail($to)) {
             throw new InvalidArgumentException("Invalid Email address '$to'");
